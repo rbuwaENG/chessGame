@@ -2,6 +2,7 @@ import { Color, Coords, FENChar } from "../models";
 import { Pices } from "./pices";
 
 export class Rook extends Pices {
+    private _hasMoved = false;
     protected override _FENChar: FENChar;
     protected override _directions: Coords[] = [
         { x: 1, y: 0 },
@@ -10,8 +11,16 @@ export class Rook extends Pices {
         { x: 0, y: -1 }
     ];
 
-    constructor(pieceColor: Color) {
+    constructor(private pieceColor: Color) {
         super(pieceColor);
         this._FENChar = pieceColor === Color.White ? FENChar.WhiteRook : FENChar.BlackRook;
+    }
+
+    public get hasMoved():boolean{
+        return this._hasMoved;
+    }
+
+    public set hasMoved(_){
+       this._hasMoved = true;
     }
 }

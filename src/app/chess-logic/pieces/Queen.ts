@@ -13,7 +13,7 @@ export class Queen extends Pices{
           {x:-1,y:-1},
     ];
 
-    constructor(pieceColor:Color){
+    constructor(private pieceColor:Color){
         super(pieceColor);
         this._FENChar = pieceColor == Color.White ? FENChar.WhiteQueen:FENChar.BlackQueen
     }

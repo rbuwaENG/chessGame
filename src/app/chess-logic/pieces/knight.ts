@@ -14,7 +14,7 @@ export class Knight extends Pices{
             {x:-2,y:-1},
         ];
 
-        constructor(piceColor:Color){
+        constructor(private piceColor:Color){
             super(piceColor);
             this._FENChar = piceColor == Color.White ? FENChar.WhiteKnight : FENChar.BlackKnight;
         }
